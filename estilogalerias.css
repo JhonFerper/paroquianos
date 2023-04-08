@@ -1,0 +1,31 @@
+.conteúdo {
+    max-width: 800px; /* Define a largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
+    padding: 20px; /* Adiciona um espaço interno */
+  }
+  
+  h1 {
+    font-size: 28px; /* Define o tamanho da fonte do cabeçalho */
+    margin-bottom: 20px; /* Adiciona um espaço inferior */
+  }
+  
+  ul {
+    list-style: none; /* Remove as marcas de lista padrão */
+    padding: 0; /* Remove o espaço interno */
+    margin-bottom: 20px; /* Adiciona um espaço inferior */
+  }
+  
+  li {
+    margin-bottom: 10px; /* Adiciona um espaço inferior */
+  }
+  
+  a {
+    color: #b43737; /* Define a cor do link */
+    text-decoration: none; /* Remove o sublinhado padrão */
+    transition: color 0.2s ease-in-out; /* Adiciona uma transição suave ao hover */
+  }
+  
+  a:hover {
+    color: #1c39df; /* Define a cor do link ao passar o mouse sobre ele */
+  }
+  
