@@ -1,0 +1,20 @@
+# Sistema operacional e editores
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Dependências e dados locais
+node_modules/
+.env
+.env.*
+*.pid
+*.log
+
+# Materiais que não devem ir para o site
+_local/
+rascunhos/
+originais/
