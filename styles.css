@@ -464,3 +464,43 @@ svg { display: block; }
   }
   .reveal, .tile { opacity: 1; transform: none; }
 }
+
+
+/* ---------- acervo de eventos ---------- */
+.archive { padding: clamp(70px, 10vw, 130px) clamp(22px, 5vw, 64px); background: var(--panel); border-top: 1px solid var(--line); }
+.archive__head { max-width: 560px; }
+.archive__head h2 { margin-top: 14px; font-family: var(--serif); font-weight: 320; font-size: clamp(30px, 4.4vw, 54px); line-height: 1.05; }
+.archive__head h2 em { color: var(--gold); }
+.archive__head p:last-child { margin-top: 16px; color: var(--muted); }
+.event-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; list-style: none; margin-top: clamp(30px, 5vw, 54px); }
+.event-card { display: grid; grid-template-columns: auto 1fr; gap: 3px 16px; align-items: baseline; padding: 20px; border: 1px solid var(--line-strong); background: rgba(22,17,13,.3); transition: transform .35s var(--ease), border-color .35s, background .35s; }
+.event-card:hover, .event-card:focus-visible, .event-card.is-current { border-color: var(--gold); background: rgba(201,164,104,.08); transform: translateY(-3px); }
+.event-card__year { grid-row: span 2; font-family: var(--serif); color: var(--gold); font-size: 24px; font-style: italic; }
+.event-card__title { font-family: var(--serif); font-size: 22px; }
+.event-card__meta { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+
+
+/* ---------- galeria simples de álbum ---------- */
+.is-simple-album .reveal { opacity: 1; transform: none; transition: none; }
+.is-simple-album .hero { min-height: min(52vh, 560px); grid-template-columns: 1fr; padding-bottom: 72px; }
+.is-simple-album .hero__text { max-width: 680px; }
+.is-simple-album .hero__sub { color: var(--muted); }
+.simple-gallery { columns: 3 240px; column-gap: var(--gap); padding: clamp(48px, 7vw, 96px) clamp(22px, 5vw, 64px); background: var(--bg-2); }
+.simple-gallery__item { display: block; break-inside: avoid; margin: 0 0 var(--gap); border: 1px solid transparent; background: var(--panel); }
+.simple-gallery__item:hover, .simple-gallery__item:focus-visible { border-color: var(--gold); }
+.simple-gallery__item img { width: 100%; height: auto; transition: none; }
+@media (max-width: 700px) { .is-simple-album .hero { min-height: 360px; padding-top: 120px; } .simple-gallery { columns: 2 150px; } }
+
+
+.lightbox__delete, .simple-gallery__delete { border-radius: 0; width: auto; padding: 0 12px; color: #e8b3a7; border-color: rgba(232,179,167,.42); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+.lightbox__delete:hover, .simple-gallery__delete:hover { color: #fff1ec; border-color: #e8b3a7; background: rgba(232,179,167,.12); }
+.simple-gallery__cell { position: relative; break-inside: avoid; margin: 0 0 var(--gap); }
+.simple-gallery__cell .simple-gallery__item { margin: 0; }
+.simple-gallery__delete { position: absolute; right: 8px; top: 8px; height: 32px; background: rgba(22,17,13,.82); }
+
+
+/* ---------- página do acervo ---------- */
+.archive-page-main { min-height: 100vh; padding-top: 92px; }
+.archive--standalone { min-height: calc(100vh - 92px); display: grid; align-content: center; }
+.archive--standalone .archive__head h1 { margin-top: 14px; font-family: var(--serif); font-weight: 320; font-size: clamp(34px, 5vw, 66px); line-height: 1.04; }
+.archive--standalone .archive__head h1 em { color: var(--gold); font-style: italic; }

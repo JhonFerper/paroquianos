@@ -1,721 +1,766 @@
-/* Gerado a partir dos metadados de data gravados. */
+const EVENT = {
+  "id": "semana-da-familia-2026",
+  "folder": "Semana da Família 2026",
+  "title": "Semana da Família 2026",
+  "titlePrimary": "Semana da",
+  "titleAccent": "Família 2026",
+  "kicker": "Paróquia São Francisco de Assis · Agosto de 2026",
+  "summary": "Memórias de fé, encontro e comunhão.",
+  "photoCount": 100,
+  "titleArt": "titulo.png",
+  "hasVideo": true,
+  "features": [
+    "Semana da Família 2026/028.jpeg",
+    "Semana da Família 2026/087.jpeg",
+    "Semana da Família 2026/092.jpeg"
+  ],
+  "days": [
+    {
+      "iso": "2026-08-10",
+      "numeral": "I",
+      "name": "Segunda-feira",
+      "date": "10 de agosto de 2026",
+      "intro": "Neste segundo encontro, nossas famílias se reuniram mais uma vez para <strong>acolher a Palavra de Deus e deixar-se iluminar por ela</strong>. Foi um momento de oração, partilha e comunhão, fortalecendo a certeza de que o Senhor caminha conosco e deseja fazer de cada lar um lugar de amor e esperança."
+    },
+    {
+      "iso": "2026-08-11",
+      "numeral": "II",
+      "name": "Terça-feira",
+      "date": "11 de agosto de 2026",
+      "intro": "Mais uma noite de encontro, fé e fraternidade marcou nossa Semana da Família. <strong>Na convivência, na oração e na partilha</strong>, fomos convidados a redescobrir a beleza da vocação familiar e a presença de Deus nas pequenas experiências do nosso dia a dia."
+    },
+    {
+      "iso": "2026-08-12",
+      "numeral": "III",
+      "name": "Quarta-feira",
+      "date": "12 de agosto de 2026",
+      "intro": "Neste quarto encontro, nossas famílias puderam renovar os vínculos que nascem do <strong>diálogo, da escuta, do perdão e do amor</strong>. Em meio aos desafios da caminhada, somos chamados a permanecer unidos e a fazer de nossas casas espaços de acolhida, reconciliação e paz."
+    },
+    {
+      "iso": "2026-08-13",
+      "numeral": "IV",
+      "name": "Quinta-feira",
+      "date": "13 de agosto de 2026",
+      "intro": "A caminhada da Semana da Família continuou com um bonito momento de reflexão e comunhão. Recordamos que <strong>a fé vivida em família deixa marcas para toda a vida</strong> e que, pelo testemunho, pela oração e pelo amor, somos chamados a transmitir às novas gerações a alegria de seguir Jesus."
+    },
+    {
+      "iso": "2026-08-14",
+      "numeral": "V",
+      "name": "Sexta-feira",
+      "date": "14 de agosto de 2026",
+      "intro": "Chegando ao sexto encontro, celebramos tudo o que Deus vem realizando em nossa caminhada. Cada família, com sua história, seus desafios e suas alegrias, é chamada a <strong>ser presença viva do amor de Deus na Igreja e na sociedade</strong>, levando adiante aquilo que recebeu e testemunhou durante estes dias."
+    },
+    {
+      "iso": "2026-08-15",
+      "numeral": "VI",
+      "name": "Sábado",
+      "date": "15 de agosto de 2026"
+    },
+    {
+      "iso": "2026-08-16",
+      "numeral": "VII",
+      "name": "Domingo",
+      "date": "16 de agosto de 2026"
+    }
+  ]
+};
+
 const GALLERY = [
   {
-    "f": "002.jpeg",
+    "f": "Semana da Família 2026/002.jpeg",
     "w": 1600,
     "h": 1200,
     "iso": "2026:08:10",
     "t": "20:13:28"
   },
   {
-    "f": "003.jpeg",
+    "f": "Semana da Família 2026/003.jpeg",
     "w": 1600,
     "h": 1200,
     "iso": "2026:08:10",
     "t": "20:13:29"
   },
   {
-    "f": "004.jpeg",
-    "w": 1599,
-    "h": 1199,
-    "iso": "2026:08:10",
-    "t": "20:13:29"
-  },
-  {
-    "f": "005.jpeg",
+    "f": "Semana da Família 2026/005.jpeg",
     "w": 1200,
     "h": 1600,
     "iso": "2026:08:10",
     "t": "20:14:14"
   },
   {
-    "f": "006.jpeg",
+    "f": "Semana da Família 2026/006.jpeg",
     "w": 1280,
     "h": 720,
     "iso": "2026:08:10",
     "t": "20:35:07"
   },
   {
-    "f": "007.jpeg",
+    "f": "Semana da Família 2026/007.jpeg",
     "w": 1280,
     "h": 960,
     "iso": "2026:08:10",
     "t": "20:46:01"
   },
   {
-    "f": "008.jpeg",
+    "f": "Semana da Família 2026/008.jpeg",
     "w": 1280,
     "h": 576,
     "iso": "2026:08:10",
     "t": "21:04:52"
   },
   {
-    "f": "009.jpeg",
+    "f": "Semana da Família 2026/009.jpeg",
     "w": 1200,
     "h": 1600,
     "iso": "2026:08:10",
     "t": "21:13:01"
   },
   {
-    "f": "010.jpeg",
+    "f": "Semana da Família 2026/010.jpeg",
     "w": 1600,
     "h": 1200,
     "iso": "2026:08:10",
     "t": "21:13:03"
   },
   {
-    "f": "011.jpeg",
+    "f": "Semana da Família 2026/011.jpeg",
     "w": 1200,
     "h": 1600,
     "iso": "2026:08:10",
     "t": "21:13:05"
   },
   {
-    "f": "012.jpeg",
+    "f": "Semana da Família 2026/012.jpeg",
     "w": 1600,
     "h": 1200,
     "iso": "2026:08:10",
     "t": "21:18:14"
   },
   {
-    "f": "013.jpeg",
+    "f": "Semana da Família 2026/013.jpeg",
     "w": 1600,
     "h": 1200,
     "iso": "2026:08:10",
     "t": "22:33:03"
   },
   {
-    "f": "014.jpeg",
+    "f": "Semana da Família 2026/014.jpeg",
     "w": 1600,
     "h": 1200,
     "iso": "2026:08:11",
     "t": "07:27:16"
   },
   {
-    "f": "015.jpeg",
+    "f": "Semana da Família 2026/015.jpeg",
     "w": 1600,
     "h": 1200,
     "iso": "2026:08:11",
     "t": "07:27:17"
   },
   {
-    "f": "016.jpeg",
+    "f": "Semana da Família 2026/016.jpeg",
     "w": 1280,
     "h": 960,
     "iso": "2026:08:11",
     "t": "20:07:48"
   },
   {
-    "f": "017.jpeg",
+    "f": "Semana da Família 2026/017.jpeg",
     "w": 1280,
     "h": 591,
     "iso": "2026:08:11",
     "t": "20:11:25"
   },
   {
-    "f": "018.jpeg",
+    "f": "Semana da Família 2026/018.jpeg",
     "w": 1280,
     "h": 591,
     "iso": "2026:08:11",
     "t": "20:11:26"
   },
   {
-    "f": "019.jpeg",
+    "f": "Semana da Família 2026/019.jpeg",
     "w": 1280,
     "h": 591,
     "iso": "2026:08:11",
     "t": "20:11:26"
   },
   {
-    "f": "020.jpeg",
+    "f": "Semana da Família 2026/020.jpeg",
     "w": 591,
     "h": 1280,
     "iso": "2026:08:11",
     "t": "20:11:27"
   },
   {
-    "f": "021.jpeg",
-    "w": 1600,
-    "h": 1200,
-    "iso": "2026:08:11",
-    "t": "20:25:06"
-  },
-  {
-    "f": "022.jpeg",
+    "f": "Semana da Família 2026/022.jpeg",
     "w": 1600,
     "h": 1200,
     "iso": "2026:08:11",
     "t": "20:25:07"
   },
   {
-    "f": "023.jpeg",
-    "w": 1600,
-    "h": 1200,
-    "iso": "2026:08:11",
-    "t": "20:25:07"
-  },
-  {
-    "f": "024.jpeg",
+    "f": "Semana da Família 2026/024.jpeg",
     "w": 1280,
     "h": 960,
     "iso": "2026:08:11",
     "t": "20:29:14"
   },
   {
-    "f": "025.jpeg",
+    "f": "Semana da Família 2026/025.jpeg",
     "w": 1280,
     "h": 960,
     "iso": "2026:08:11",
     "t": "20:29:14"
   },
   {
-    "f": "026.jpeg",
+    "f": "Semana da Família 2026/026.jpeg",
     "w": 960,
     "h": 1280,
     "iso": "2026:08:11",
     "t": "20:29:15"
   },
   {
-    "f": "027.jpeg",
+    "f": "Semana da Família 2026/027.jpeg",
     "w": 1280,
     "h": 577,
     "iso": "2026:08:11",
     "t": "20:49:26"
   },
   {
-    "f": "028.jpeg",
+    "f": "Semana da Família 2026/028.jpeg",
     "w": 3879,
     "h": 2254,
     "iso": "2026:08:11",
     "t": "20:49:55"
   },
   {
-    "f": "029.jpeg",
+    "f": "Semana da Família 2026/029.jpeg",
     "w": 1280,
     "h": 720,
     "iso": "2026:08:11",
     "t": "21:17:04"
   },
   {
-    "f": "030.jpeg",
+    "f": "Semana da Família 2026/030.jpeg",
     "w": 1280,
     "h": 720,
     "iso": "2026:08:11",
     "t": "21:17:04"
   },
   {
-    "f": "031.jpeg",
+    "f": "Semana da Família 2026/031.jpeg",
     "w": 720,
     "h": 1280,
     "iso": "2026:08:11",
     "t": "21:17:05"
   },
   {
-    "f": "032.jpeg",
+    "f": "Semana da Família 2026/032.jpeg",
     "w": 1280,
     "h": 720,
     "iso": "2026:08:11",
     "t": "21:17:05"
   },
   {
-    "f": "033.jpeg",
+    "f": "Semana da Família 2026/033.jpeg",
     "w": 1280,
     "h": 720,
     "iso": "2026:08:11",
     "t": "21:17:06"
   },
   {
-    "f": "034.jpeg",
+    "f": "Semana da Família 2026/034.jpeg",
     "w": 720,
     "h": 1280,
     "iso": "2026:08:11",
     "t": "21:17:06"
   },
   {
-    "f": "035.jpeg",
+    "f": "Semana da Família 2026/035.jpeg",
     "w": 704,
     "h": 1600,
     "iso": "2026:08:11",
     "t": "21:25:55"
   },
   {
-    "f": "036.jpeg",
+    "f": "Semana da Família 2026/036.jpeg",
     "w": 704,
     "h": 1600,
     "iso": "2026:08:11",
     "t": "21:25:55"
   },
   {
-    "f": "037.jpeg",
+    "f": "Semana da Família 2026/037.jpeg",
     "w": 1600,
     "h": 704,
     "iso": "2026:08:11",
     "t": "21:25:56"
   },
   {
-    "f": "038.jpeg",
+    "f": "Semana da Família 2026/038.jpeg",
     "w": 1200,
     "h": 1600,
     "iso": "2026:08:11",
     "t": "21:48:26"
   },
   {
-    "f": "039.jpeg",
+    "f": "Semana da Família 2026/039.jpeg",
     "w": 1600,
     "h": 900,
     "iso": "2026:08:11",
     "t": "21:51:47"
   },
   {
-    "f": "040.jpeg",
+    "f": "Semana da Família 2026/040.jpeg",
     "w": 1280,
     "h": 720,
     "iso": "2026:08:12",
     "t": "19:02:30"
   },
   {
-    "f": "041.jpeg",
+    "f": "Semana da Família 2026/041.jpeg",
     "w": 1280,
     "h": 720,
     "iso": "2026:08:12",
     "t": "19:02:30"
   },
   {
-    "f": "042.jpeg",
+    "f": "Semana da Família 2026/042.jpeg",
     "w": 1600,
     "h": 1200,
     "iso": "2026:08:12",
     "t": "19:08:58"
   },
   {
-    "f": "043.jpeg",
+    "f": "Semana da Família 2026/043.jpeg",
     "w": 1280,
     "h": 720,
     "iso": "2026:08:12",
     "t": "19:10:43"
   },
   {
-    "f": "044.jpeg",
+    "f": "Semana da Família 2026/044.jpeg",
     "w": 1280,
     "h": 720,
     "iso": "2026:08:12",
     "t": "19:10:57"
   },
   {
-    "f": "045.jpeg",
+    "f": "Semana da Família 2026/045.jpeg",
     "w": 1280,
     "h": 720,
     "iso": "2026:08:12",
     "t": "19:11:48"
   },
   {
-    "f": "046.jpeg",
+    "f": "Semana da Família 2026/046.jpeg",
     "w": 720,
     "h": 1280,
     "iso": "2026:08:12",
     "t": "19:13:51"
   },
   {
-    "f": "047.jpeg",
+    "f": "Semana da Família 2026/047.jpeg",
     "w": 1200,
     "h": 1600,
     "iso": "2026:08:12",
     "t": "20:01:10"
   },
   {
-    "f": "048.jpeg",
+    "f": "Semana da Família 2026/048.jpeg",
     "w": 1280,
     "h": 720,
     "iso": "2026:08:12",
     "t": "20:09:09"
   },
   {
-    "f": "049.jpeg",
+    "f": "Semana da Família 2026/049.jpeg",
     "w": 1600,
     "h": 1200,
     "iso": "2026:08:12",
     "t": "20:14:24"
   },
   {
-    "f": "050.jpeg",
+    "f": "Semana da Família 2026/050.jpeg",
     "w": 1600,
     "h": 1200,
     "iso": "2026:08:12",
     "t": "20:48:36"
   },
   {
-    "f": "051.jpeg",
+    "f": "Semana da Família 2026/051.jpeg",
     "w": 1600,
     "h": 1200,
     "iso": "2026:08:12",
     "t": "20:48:36"
   },
   {
-    "f": "052.jpeg",
+    "f": "Semana da Família 2026/052.jpeg",
     "w": 1600,
     "h": 1200,
     "iso": "2026:08:12",
     "t": "20:48:40"
   },
   {
-    "f": "053.jpeg",
+    "f": "Semana da Família 2026/053.jpeg",
     "w": 1200,
     "h": 1600,
     "iso": "2026:08:12",
     "t": "20:50:24"
   },
   {
-    "f": "054.jpeg",
+    "f": "Semana da Família 2026/054.jpeg",
     "w": 1600,
     "h": 1200,
     "iso": "2026:08:12",
     "t": "21:15:26"
   },
   {
-    "f": "055.jpeg",
+    "f": "Semana da Família 2026/055.jpeg",
     "w": 1280,
     "h": 960,
     "iso": "2026:08:12",
     "t": "22:20:07"
   },
   {
-    "f": "056.jpeg",
+    "f": "Semana da Família 2026/056.jpeg",
     "w": 1600,
     "h": 720,
     "iso": "2026:08:12",
     "t": "22:55:13"
   },
   {
-    "f": "057.jpeg",
+    "f": "Semana da Família 2026/057.jpeg",
     "w": 720,
     "h": 1280,
     "iso": "2026:08:13",
     "t": "19:54:50"
   },
   {
-    "f": "058.jpeg",
+    "f": "Semana da Família 2026/058.jpeg",
     "w": 1280,
     "h": 720,
     "iso": "2026:08:13",
     "t": "19:55:36"
   },
   {
-    "f": "059.jpeg",
+    "f": "Semana da Família 2026/059.jpeg",
     "w": 720,
     "h": 1280,
     "iso": "2026:08:13",
     "t": "19:56:35"
   },
   {
-    "f": "060.jpeg",
+    "f": "Semana da Família 2026/060.jpeg",
     "w": 720,
     "h": 1280,
     "iso": "2026:08:13",
     "t": "19:57:37"
   },
   {
-    "f": "061.jpeg",
+    "f": "Semana da Família 2026/061.jpeg",
     "w": 720,
     "h": 1280,
     "iso": "2026:08:13",
     "t": "19:58:35"
   },
   {
-    "f": "062.jpeg",
+    "f": "Semana da Família 2026/062.jpeg",
     "w": 1280,
     "h": 960,
     "iso": "2026:08:13",
     "t": "20:08:57"
   },
   {
-    "f": "063.jpeg",
+    "f": "Semana da Família 2026/063.jpeg",
     "w": 1280,
     "h": 720,
     "iso": "2026:08:13",
     "t": "20:12:29"
   },
   {
-    "f": "064.jpeg",
+    "f": "Semana da Família 2026/064.jpeg",
     "w": 1280,
     "h": 720,
     "iso": "2026:08:13",
     "t": "20:12:34"
   },
   {
-    "f": "065.jpeg",
+    "f": "Semana da Família 2026/065.jpeg",
     "w": 1200,
     "h": 1600,
     "iso": "2026:08:13",
     "t": "20:13:13"
   },
   {
-    "f": "066.jpeg",
+    "f": "Semana da Família 2026/066.jpeg",
     "w": 1280,
     "h": 960,
     "iso": "2026:08:13",
     "t": "20:42:35"
   },
   {
-    "f": "067.jpeg",
+    "f": "Semana da Família 2026/067.jpeg",
     "w": 960,
     "h": 1280,
     "iso": "2026:08:13",
     "t": "20:42:36"
   },
   {
-    "f": "068.jpeg",
+    "f": "Semana da Família 2026/068.jpeg",
     "w": 1600,
     "h": 1200,
     "iso": "2026:08:13",
     "t": "20:55:38"
   },
   {
-    "f": "069.jpeg",
+    "f": "Semana da Família 2026/069.jpeg",
     "w": 1280,
     "h": 960,
     "iso": "2026:08:13",
     "t": "21:09:02"
   },
   {
-    "f": "070.jpeg",
+    "f": "Semana da Família 2026/070.jpeg",
     "w": 1600,
     "h": 1200,
     "iso": "2026:08:13",
     "t": "21:09:02"
   },
   {
-    "f": "071.jpeg",
+    "f": "Semana da Família 2026/071.jpeg",
     "w": 1600,
     "h": 1200,
     "iso": "2026:08:13",
     "t": "21:44:01"
   },
   {
-    "f": "072.jpeg",
+    "f": "Semana da Família 2026/072.jpeg",
     "w": 1200,
     "h": 1600,
     "iso": "2026:08:13",
     "t": "21:46:08"
   },
   {
-    "f": "073.jpeg",
+    "f": "Semana da Família 2026/073.jpeg",
     "w": 1200,
     "h": 1600,
     "iso": "2026:08:13",
     "t": "21:46:09"
   },
   {
-    "f": "074.jpeg",
+    "f": "Semana da Família 2026/074.jpeg",
     "w": 1600,
     "h": 1200,
     "iso": "2026:08:13",
     "t": "21:51:11"
   },
   {
-    "f": "075.jpeg",
+    "f": "Semana da Família 2026/075.jpeg",
     "w": 1600,
     "h": 1204,
     "iso": "2026:08:13",
     "t": "21:51:12"
   },
   {
-    "f": "076.jpeg",
+    "f": "Semana da Família 2026/076.jpeg",
     "w": 1280,
     "h": 960,
     "iso": "2026:08:14",
     "t": "07:59:08"
   },
   {
-    "f": "077.jpeg",
+    "f": "Semana da Família 2026/077.jpeg",
     "w": 1280,
     "h": 960,
     "iso": "2026:08:14",
     "t": "07:59:08"
   },
   {
-    "f": "078.jpeg",
+    "f": "Semana da Família 2026/078.jpeg",
     "w": 720,
     "h": 1280,
     "iso": "2026:08:14",
     "t": "19:55:30"
   },
   {
-    "f": "079.jpeg",
+    "f": "Semana da Família 2026/079.jpeg",
     "w": 1280,
     "h": 720,
     "iso": "2026:08:14",
     "t": "19:55:31"
   },
   {
-    "f": "080.jpeg",
+    "f": "Semana da Família 2026/080.jpeg",
     "w": 720,
     "h": 1280,
     "iso": "2026:08:14",
     "t": "20:07:22"
   },
   {
-    "f": "081.jpeg",
+    "f": "Semana da Família 2026/081.jpeg",
     "w": 1280,
     "h": 720,
     "iso": "2026:08:14",
     "t": "20:07:25"
   },
   {
-    "f": "082.jpeg",
+    "f": "Semana da Família 2026/082.jpeg",
     "w": 1600,
     "h": 1200,
     "iso": "2026:08:14",
     "t": "20:12:22"
   },
   {
-    "f": "083.jpeg",
+    "f": "Semana da Família 2026/083.jpeg",
     "w": 1600,
     "h": 1146,
     "iso": "2026:08:14",
     "t": "20:12:22"
   },
   {
-    "f": "084.jpeg",
+    "f": "Semana da Família 2026/084.jpeg",
     "w": 1288,
     "h": 966,
     "iso": "2026:08:14",
     "t": "20:15:43"
   },
   {
-    "f": "085.jpeg",
+    "f": "Semana da Família 2026/085.jpeg",
     "w": 960,
     "h": 1280,
     "iso": "2026:08:14",
     "t": "20:37:06"
   },
   {
-    "f": "086.jpeg",
+    "f": "Semana da Família 2026/086.jpeg",
     "w": 960,
     "h": 1280,
     "iso": "2026:08:14",
     "t": "20:37:06"
   },
   {
-    "f": "087.jpeg",
+    "f": "Semana da Família 2026/087.jpeg",
     "w": 4160,
     "h": 3120,
     "iso": "2026:08:14",
     "t": "20:39:23"
   },
   {
-    "f": "088.jpeg",
+    "f": "Semana da Família 2026/088.jpeg",
     "w": 1152,
     "h": 864,
     "iso": "2026:08:14",
     "t": "20:41:02"
   },
   {
-    "f": "089.jpeg",
+    "f": "Semana da Família 2026/089.jpeg",
     "w": 1280,
     "h": 963,
     "iso": "2026:08:14",
     "t": "20:41:02"
   },
   {
-    "f": "090.jpeg",
+    "f": "Semana da Família 2026/090.jpeg",
     "w": 1600,
     "h": 1204,
     "iso": "2026:08:14",
     "t": "20:59:17"
   },
   {
-    "f": "091.jpeg",
+    "f": "Semana da Família 2026/091.jpeg",
     "w": 1600,
     "h": 1204,
     "iso": "2026:08:14",
     "t": "20:59:18"
   },
   {
-    "f": "092.jpeg",
+    "f": "Semana da Família 2026/092.jpeg",
     "w": 4032,
     "h": 3024,
     "iso": "2026:08:14",
     "t": "21:19:32"
   },
   {
-    "f": "093.jpeg",
+    "f": "Semana da Família 2026/093.jpeg",
     "w": 1280,
     "h": 960,
     "iso": "2026:08:14",
     "t": "21:34:36"
   },
   {
-    "f": "094.jpeg",
+    "f": "Semana da Família 2026/094.jpeg",
     "w": 1280,
     "h": 960,
     "iso": "2026:08:14",
     "t": "21:34:37"
   },
   {
-    "f": "095.jpeg",
+    "f": "Semana da Família 2026/095.jpeg",
     "w": 960,
     "h": 1280,
     "iso": "2026:08:14",
     "t": "21:34:37"
   },
   {
-    "f": "096.jpeg",
+    "f": "Semana da Família 2026/096.jpeg",
     "w": 1600,
     "h": 721,
     "iso": "2026:08:14",
     "t": "21:49:31"
   },
   {
-    "f": "097.jpeg",
+    "f": "Semana da Família 2026/097.jpeg",
     "w": 1600,
     "h": 1200,
     "iso": "2026:08:14",
     "t": "22:00:09"
   },
   {
-    "f": "098.jpeg",
+    "f": "Semana da Família 2026/098.jpeg",
     "w": 1600,
     "h": 1200,
     "iso": "2026:08:14",
     "t": "22:13:27"
   },
   {
-    "f": "099.jpeg",
+    "f": "Semana da Família 2026/099.jpeg",
     "w": 1600,
     "h": 721,
     "iso": "2026:08:14",
     "t": "22:18:45"
   },
   {
-    "f": "100.jpeg",
+    "f": "Semana da Família 2026/100.jpeg",
     "w": 1600,
     "h": 1200,
     "iso": "2026:08:15",
     "t": "20:40:23"
   },
   {
-    "f": "101.jpeg",
+    "f": "Semana da Família 2026/101.jpeg",
     "w": 1280,
     "h": 960,
     "iso": "2026:08:15",
     "t": "21:37:30"
   },
   {
-    "f": "102.jpeg",
+    "f": "Semana da Família 2026/102.jpeg",
     "w": 1280,
     "h": 960,
     "iso": "2026:08:15",
     "t": "21:37:31"
   },
   {
-    "f": "103.jpeg",
+    "f": "Semana da Família 2026/103.jpeg",
     "w": 1280,
     "h": 960,
     "iso": "2026:08:16",
     "t": "10:42:18"
   },
   {
-    "f": "104.jpeg",
+    "f": "Semana da Família 2026/104.jpeg",
     "w": 960,
     "h": 1280,
     "iso": "2026:08:16",

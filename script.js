@@ -4,19 +4,138 @@
 (function () {
   "use strict";
 
+  var dataReady = window.EVENT_DATA_READY || Promise.resolve();
+  dataReady.then(function () {
+
   var REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var LOCAL_ADMIN = window.location.port === "8000" && ["localhost", "127.0.0.1"].indexOf(window.location.hostname) !== -1;
 
-  var DAYS = [
-    { iso: "2026-08-10", numeral: "I",   name: "Segunda-feira", date: "10 de agosto de 2026", intro: "Neste segundo encontro, nossas famílias se reuniram mais uma vez para <strong>acolher a Palavra de Deus e deixar-se iluminar por ela</strong>. Foi um momento de oração, partilha e comunhão, fortalecendo a certeza de que o Senhor caminha conosco e deseja fazer de cada lar um lugar de amor e esperança." },
-    { iso: "2026-08-11", numeral: "II",  name: "Terça-feira",   date: "11 de agosto de 2026", intro: "Mais uma noite de encontro, fé e fraternidade marcou nossa Semana da Família. <strong>Na convivência, na oração e na partilha</strong>, fomos convidados a redescobrir a beleza da vocação familiar e a presença de Deus nas pequenas experiências do nosso dia a dia." },
-    { iso: "2026-08-12", numeral: "III", name: "Quarta-feira",  date: "12 de agosto de 2026", intro: "Neste quarto encontro, nossas famílias puderam renovar os vínculos que nascem do <strong>diálogo, da escuta, do perdão e do amor</strong>. Em meio aos desafios da caminhada, somos chamados a permanecer unidos e a fazer de nossas casas espaços de acolhida, reconciliação e paz." },
-    { iso: "2026-08-13", numeral: "IV",  name: "Quinta-feira",  date: "13 de agosto de 2026", intro: "A caminhada da Semana da Família continuou com um bonito momento de reflexão e comunhão. Recordamos que <strong>a fé vivida em família deixa marcas para toda a vida</strong> e que, pelo testemunho, pela oração e pelo amor, somos chamados a transmitir às novas gerações a alegria de seguir Jesus." },
-    { iso: "2026-08-14", numeral: "V",   name: "Sexta-feira",   date: "14 de agosto de 2026", intro: "Chegando ao sexto encontro, celebramos tudo o que Deus vem realizando em nossa caminhada. Cada família, com sua história, seus desafios e suas alegrias, é chamada a <strong>ser presença viva do amor de Deus na Igreja e na sociedade</strong>, levando adiante aquilo que recebeu e testemunhou durante estes dias." },
-    { iso: "2026-08-15", numeral: "VI",  name: "Sábado",        date: "15 de agosto de 2026" },
-    { iso: "2026-08-16", numeral: "VII", name: "Domingo",       date: "16 de agosto de 2026" }
-  ];
+  function deleteLocalPhoto(file) {
+    if (!window.confirm("Excluir esta fotografia definitivamente? Esta ação não pode ser desfeita.")) return Promise.resolve(false);
+    return fetch("/api/photos?path=" + encodeURIComponent(file), { method: "DELETE" })
+      .then(function (response) { if (!response.ok) throw new Error("Não foi possível excluir a fotografia."); return response.json(); })
+      .then(function () { return true; })
+      .catch(function (error) { window.alert(error.message); return false; });
+  }
 
-  var FEATURES = ["028.jpeg", "087.jpeg", "092.jpeg"];
+  /* ---------- 0 · Identidade e acervo ---------- */
+  (function () {
+    document.title = EVENT.title + " · Paroquianos do Junco";
+    document.querySelector(".hero .eyebrow").textContent = EVENT.kicker;
+    document.querySelector(".hero__title span").textContent = EVENT.titlePrimary;
+    document.querySelector(".hero__title em").textContent = EVENT.titleAccent;
+    document.querySelector(".hero__sub").textContent = EVENT.summary;
+    var art = document.querySelector(".hero__title-art");
+    var viewport = document.querySelector(".viewport");
+    if (EVENT.titleArt) art.querySelector("img").src = EVENT.folder + "/" + EVENT.titleArt;
+    else art.hidden = true;
+    if (EVENT.hasVideo) { var video = viewport.querySelector("iframe"); video.src = video.dataset.src; } else viewport.hidden = true;
+
+    var list = document.getElementById("eventList");
+    if (list) EVENTS.forEach(function (event) {
+      var li = document.createElement("li");
+      var a = document.createElement("a");
+      a.className = "event-card" + (event.id === EVENT.id ? " is-current" : "");
+      a.href = event.id === "semana-da-familia-2026" ? "index.html" : "galeria.html?evento=" + encodeURIComponent(event.id);
+      a.innerHTML = "<span class=\"event-card__year\">" + event.year + "</span><span class=\"event-card__title\">" + event.title + "</span><span class=\"event-card__meta\">" + event.photoCount + " fotografias</span>";
+      li.appendChild(a);
+      list.appendChild(li);
+    });
+  })();
+
+  function buildSimpleGallery() {
+    document.body.classList.add("is-simple-album");
+    [".hero__title-art", ".hero__lede", ".hero__scroll", "#indice", ".closing"].forEach(function (selector) {
+      var node = document.querySelector(selector);
+      if (node) node.hidden = true;
+    });
+
+    var lightbox = document.getElementById("lightbox");
+    var lightboxImage = document.getElementById("lbImg");
+    var lightboxIndex = document.getElementById("lbIndex");
+    var lightboxTotal = document.getElementById("lbTotal");
+    var lightboxCaption = document.getElementById("lbCaption");
+    var lightboxPlay = document.getElementById("lbPlay");
+    var lightboxFull = document.getElementById("lbFull");
+    var lightboxDelete = document.getElementById("lbDelete");
+    var current = 0;
+    var trigger = null;
+
+    lightboxPlay.hidden = true;
+    lightboxFull.hidden = true;
+    lightboxCaption.hidden = true;
+    lightboxTotal.textContent = GALLERY.length;
+    if (LOCAL_ADMIN) lightboxDelete.hidden = false;
+
+    function show(index) {
+      current = (index + GALLERY.length) % GALLERY.length;
+      var item = GALLERY[current];
+      lightboxImage.src = item.f;
+      lightboxImage.alt = EVENT.title + " — fotografia " + (current + 1);
+      lightboxIndex.textContent = current + 1;
+    }
+    function close() {
+      lightbox.classList.remove("is-open");
+      setTimeout(function () { lightbox.setAttribute("hidden", ""); }, 360);
+      document.body.style.overflow = "";
+      if (trigger) trigger.focus();
+    }
+    function open(index, source) {
+      trigger = source; show(index); lightbox.removeAttribute("hidden");
+      requestAnimationFrame(function () { lightbox.classList.add("is-open"); });
+      document.body.style.overflow = "hidden";
+      document.querySelector(".lightbox__close").focus();
+    }
+    function step(direction) { show(current + direction); }
+
+    document.querySelectorAll(".lightbox__close, .lightbox__backdrop").forEach(function (button) { button.addEventListener("click", close); });
+    document.getElementById("lbPrev").addEventListener("click", function () { step(-1); });
+    document.getElementById("lbNext").addEventListener("click", function () { step(1); });
+    document.addEventListener("keydown", function (event) {
+      if (lightbox.hasAttribute("hidden")) return;
+      if (event.key === "Escape") close();
+      else if (event.key === "ArrowLeft") step(-1);
+      else if (event.key === "ArrowRight") step(1);
+    });
+    var touchX = null;
+    lightbox.addEventListener("touchstart", function (event) { touchX = event.changedTouches[0].clientX; }, { passive: true });
+    lightbox.addEventListener("touchend", function (event) {
+      if (touchX == null) return;
+      var distance = event.changedTouches[0].clientX - touchX;
+      if (Math.abs(distance) > 46) step(distance < 0 ? 1 : -1);
+      touchX = null;
+    }, { passive: true });
+    if (LOCAL_ADMIN) lightboxDelete.addEventListener("click", function () { deleteLocalPhoto(GALLERY[current].f).then(function (removed) { if (removed) window.location.reload(); }); });
+
+    var gallery = document.getElementById("gallery");
+    gallery.className = "simple-gallery";
+    GALLERY.forEach(function (item, index) {
+      var link = document.createElement("a");
+      link.className = "simple-gallery__item";
+      link.href = "#foto-" + (index + 1);
+      link.setAttribute("aria-label", "Ampliar fotografia " + (index + 1));
+      link.addEventListener("click", function (event) { event.preventDefault(); open(index, link); });
+      var image = document.createElement("img");
+      image.src = item.f; image.width = item.w; image.height = item.h;
+      image.alt = EVENT.title + " — fotografia " + (index + 1); image.decoding = "async";
+      if (index > 8) image.loading = "lazy";
+      link.appendChild(image);
+      if (LOCAL_ADMIN) {
+        var cell = document.createElement("div"); cell.className = "simple-gallery__cell";
+        var remove = document.createElement("button"); remove.className = "simple-gallery__delete"; remove.type = "button"; remove.textContent = "Excluir";
+        remove.addEventListener("click", function () { deleteLocalPhoto(item.f).then(function (removed) { if (removed) window.location.reload(); }); });
+        cell.appendChild(link); cell.appendChild(remove); gallery.appendChild(cell);
+      } else gallery.appendChild(link);
+    });
+  }
+
+  if (EVENT.simpleGallery) {
+    buildSimpleGallery();
+    return;
+  }
+
+  var DAYS = EVENT.days;
+  var FEATURES = EVENT.features;
   var photos = GALLERY.filter(function (g) { return g.f.indexOf(".jpeg") !== -1; });
 
   var dayMap = DAYS.reduce(function (m, d) { m[d.iso] = d; return m; }, {});
@@ -241,6 +360,7 @@
   var lbProgress = document.getElementById("lbProgress");
   var lbPlay = document.getElementById("lbPlay");
   var lbFull = document.getElementById("lbFull");
+  var lbDelete = document.getElementById("lbDelete");
   var current = 0;
   var slideTimer = null;
   var isPlaying = false;
@@ -356,6 +476,13 @@
     else if (lb.requestFullscreen) lb.requestFullscreen();
   });
 
+  if (LOCAL_ADMIN) {
+    lbDelete.hidden = false;
+    lbDelete.addEventListener("click", function () {
+      deleteLocalPhoto(ordered[current].f).then(function (removed) { if (removed) window.location.reload(); });
+    });
+  }
+
   /* abrir tiles */
   built.forEach(function (b) {
     b.tile.addEventListener("click", function (e) {
@@ -380,4 +507,5 @@
     document.fonts.ready.then(function () { place(); });
   }
   window.addEventListener("load", place);
+  });
 })();
